@@ -3,19 +3,19 @@ import { Menu } from '@headlessui/react';
 export const TableButton = ({ countPending, onConfirmPayout }) => {
 	return (
 		<div className='flex flex-wrap items-center gap-2 lg:gap-1'>
-			<Menu as='div' className='relative inline-block'>
+			<Menu as='div' className='lg:relative lg:inline-block'>
 				<Menu.Button className='btn rounded-[4px] bg-primary px-2 py-1 text-sm text-white'>
 					Sort by
 					<i className='bi bi-caret-down-fill text-xs'></i>
 				</Menu.Button>
 
-				<Menu.Items className='absolute left-0 mt-3 w-52 origin-top-right divide-y divide-gray-300 bg-white shadow-sm'>
-					<Menu as='div' className='relative inline-block'>
-						<Menu.Button className='block w-full cursor-pointer px-4 py-1.5 text-base font-medium text-dark'>
+				<Menu.Items className='absolute mt-3 origin-top-right divide-y divide-gray-300 bg-white shadow-sm lg:left-0 lg:w-52'>
+					<Menu as='div' className='lg:relative lg:inline-block'>
+						<Menu.Button className='block w-full cursor-pointer px-4 py-1.5 text-left text-base font-medium text-dark'>
 							Revenue Generated
 						</Menu.Button>
 
-						<Menu.Items className='absolute left-0 z-10 w-52 origin-top-right border border-gray-300 bg-white shadow-sm lg:top-0 lg:left-[220px]'>
+						<Menu.Items className='absolute origin-top-right divide-y divide-gray-300 bg-white shadow-sm lg:left-[220px] lg:top-0 lg:w-52'>
 							<Menu.Item
 								as='div'
 								className='block w-full cursor-pointer px-4 py-1.5 text-base font-medium text-dark'
@@ -31,12 +31,12 @@ export const TableButton = ({ countPending, onConfirmPayout }) => {
 						</Menu.Items>
 					</Menu>
 
-					<Menu as='div' className='relative inline-block'>
+					<Menu as='div' className='lg:relative lg:inline-block'>
 						<Menu.Button className='block w-full cursor-pointer px-4 py-1.5 text-base font-medium text-dark'>
 							Most Recent Referral
 						</Menu.Button>
 
-						<Menu.Items className='absolute left-0 z-10 w-52 origin-top-right border border-gray-300 bg-white shadow-sm lg:top-0 lg:left-[220px]'>
+						<Menu.Items className='absolute origin-top-right divide-y divide-gray-300 bg-white shadow-sm lg:left-[220px] lg:top-0 lg:w-52'>
 							<Menu.Item
 								as='div'
 								className='block w-full cursor-pointer px-4 py-1.5 text-base font-medium text-dark'
@@ -60,7 +60,7 @@ export const TableButton = ({ countPending, onConfirmPayout }) => {
 					<i className='bi bi-caret-down-fill text-xs'></i>
 				</Menu.Button>
 
-				<Menu.Items className='absolute left-0 mt-3 w-52 origin-top-right divide-y divide-gray-300 bg-white shadow-sm'>
+				<Menu.Items className='absolute mt-3 origin-top-right divide-y divide-gray-300 bg-white shadow-sm lg:left-0 lg:w-52'>
 					<Menu.Item
 						as='div'
 						className='block w-full cursor-pointer px-4 py-1.5 text-base font-medium text-dark'
@@ -87,7 +87,7 @@ export const TableButton = ({ countPending, onConfirmPayout }) => {
 					Action <i className='bi bi-caret-down-fill text-xs'></i>
 				</Menu.Button>
 
-				<Menu.Items className='absolute left-0 mt-3 w-52 origin-top-right divide-y divide-gray-300 bg-white shadow-sm'>
+				<Menu.Items className='absolute mt-3 origin-top-right divide-y divide-gray-300 bg-white shadow-sm lg:left-0 lg:w-52'>
 					<Menu.Item
 						as='div'
 						className='block w-full cursor-pointer px-4 py-1.5 text-base font-medium text-dark'
