@@ -4,7 +4,7 @@ import { Header, Card, Table, Modal } from '../components';
 import { TableButton } from '../components/table/TableButton';
 import { format } from '../utils/format';
 
-const data = [
+export const data = [
 	{
 		id: 1,
 		name: 'Gy Test',
@@ -155,6 +155,7 @@ export const PayoutPage = () => {
 							value={format.currency(totalReadyPayouts)}
 							button={
 								<button
+									id='payoutall'
 									onClick={() => {
 										setPayouts(data);
 										setConfirmPayout(true);
