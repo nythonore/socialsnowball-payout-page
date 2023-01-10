@@ -1,8 +1,22 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { format } from '../../utils/format';
 
 export const Modal = ({ show, onClose, payouts }) => {
+	const modalRoot = document.getElementById('modal-root');
+
+	const modalRef = useRef(null);
+	if (!modalRef.current) modalRef.current = document.createElement('div');
+
+	useEffect(() => {
+		const modal = modalRef.current;
+
+		modalRoot.appendChild(modal);
+
+		return () => modalRoot.removeChild(modal);
+	}, [modalRoot]);
+
 	const onSubmit = () => console.log(payouts);
 
 	const total = payouts.reduce(
@@ -10,7 +24,7 @@ export const Modal = ({ show, onClose, payouts }) => {
 		0
 	);
 
-	return (
+	return createPortal(
 		<Transition as={Fragment} appear show={show}>
 			<Dialog as='div' onClose={onClose} className='relative z-10'>
 				<Transition.Child
@@ -141,6 +155,7 @@ export const Modal = ({ show, onClose, payouts }) => {
 					</div>
 				</div>
 			</Dialog>
-		</Transition>
+		</Transition>,
+		modalRef.current
 	);
 };
